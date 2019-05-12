@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Locant</title>
+    </head>
+    <body>
+        <h1>Locant</h1>
+        <legend>Upload 2G location file</legend>
+        <form method="POST" enctype="multipart/form-data" action="/submit-2g-data">
+            <input type="file" name="document" required />
+            <input type="submit" />
+        </form>    
+        <hr>
+        <legend>Upload 3G location file</legend>
+        <form method="POST" enctype="multipart/form-data" action="/submit-3g-data">
+            <input type="file" name="document" required />
+            <input type="submit" />
+        </form>  
+        <hr>
+        <legend>Upload 4G location file</legend>
+        <form method="POST" enctype="multipart/form-data" action="/submit-4g-data">
+            <input type="file" name="document" required />
+            <input type="submit" />
+        </form>        
+    </body>
+</html>
