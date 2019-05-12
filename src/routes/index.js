@@ -7,6 +7,7 @@ const multer = require('multer');
 const model2g = require('../model/dato2g')();
 const model3g = require('../model/dato3g')();
 const model4g = require('../model/dato4g')();
+const wifi = require('../model/wifi')();
 
 var storage2g = multer.diskStorage(
     {
@@ -48,7 +49,35 @@ router.get('/', (req, res)=>{
     res.render('index');
 });
 
-//endpints per retornar dades.
+//endpints per retornar dades wifi
+router.get('/wifis', (req, res)=>{
+    wifi.find({},(err, wifis) =>{
+        if (err) throw err;
+        res.send(wifis);
+    });
+});
+
+router.delete('/deletewifi', (req, res)=>{
+    console.log("remove: " + req.body.id);
+    wifi.findOneAndDelete({_id: req.body.id}, function(err){
+        if (err) throw err;
+        res.send('removed');
+    })
+})
+
+//insert wifi
+router.post('/addwifi', (req, res)=>{
+    var wifiobj = req.body;
+    console.log(wifiobj);
+    var mod = {ssid: wifiobj.ssid, password: wifiobj.password,longitude: wifiobj.long, latitude: wifiobj.lat};
+    wifi.create(mod, (err, wifir)=>{
+        if (err) throw err;
+        console.log(wifir);
+    });
+    res.send("fet");
+})
+
+//endpints per retornar dades antenes
 router.get('/datos2g', (req, res)=>{
     model2g.find({},(err, datos3g) =>{
         if (err) throw err;
