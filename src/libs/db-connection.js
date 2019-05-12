@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-let db;
+var db;
 
 module.exports = function Connection() {
     
     if (!db) {
-        db = mongoose.connect('mongodb://localhost/test', {
+        db = mongoose.connect('mongodb://localhost/pae', {
             useNewUrlParser: true
         })
     }

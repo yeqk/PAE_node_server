@@ -86,7 +86,7 @@ router.post('/submit-2g-data', upload2g.single('document'),(req, res) => {
     /* ===== Add the function to save filename to database ===== */
     model2g.collection.drop();
     var fs = require('fs');
-    var json = JSON.parse(fs.readFileSync('/home/yeqk97/Locant/uploads/datos_3g.geojson', 'utf8'));
+    var json = JSON.parse(fs.readFileSync('/root/PAE_node_server/uploads/datos_3g.geojson', 'utf8'));
     var features = json.features;
     
     features.forEach(function(elem) {
@@ -125,7 +125,7 @@ router.post('/submit-3g-data', upload3g.single('document'),(req, res) => {
     /* ===== Add the function to save filename to database ===== */
     model3g.collection.drop();
     var fs = require('fs');
-    var json = JSON.parse(fs.readFileSync('/home/yeqk97/Locant/uploads/datos_3g.geojson', 'utf8'));
+    var json = JSON.parse(fs.readFileSync('/root/PAE_node_server/uploads/datos_3g.geojson', 'utf8'));
     var features = json.features;
     
     features.forEach(function(elem) {
@@ -163,7 +163,7 @@ router.post('/submit-4g-data', upload4g.single('document'),(req, res) => {
     /* ===== Add the function to save filename to database ===== */
     model4g.collection.drop();
     var fs = require('fs');
-    var json = JSON.parse(fs.readFileSync('/home/yeqk97/Locant/uploads/datos_4g.geojson', 'utf8'));
+    var json = JSON.parse(fs.readFileSync('/root/PAE_node_server/uploads/datos_4g.geojson', 'utf8'));
     var features = json.features;
     
     features.forEach(function(elem) {
