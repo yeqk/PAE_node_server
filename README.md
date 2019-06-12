@@ -1,6 +1,6 @@
 # PAE_node_server
 
-Camila Bisio
-David Sanchez
-Mohamed Chait Chait
+Camila Bisio <br> 
+David Sanchez <br>
+Mohamed Chait Chait <br>
 Qiong Kai Ye
